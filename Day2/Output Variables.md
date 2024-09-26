@@ -1,6 +1,5 @@
 ## Using Output Feature 
 
-### Task-1: Using output feature of Terraform to get the IP Address of EC2 Instance
 ```
 mkdir output-variable-lab && cd output-variable-lab
 ```
