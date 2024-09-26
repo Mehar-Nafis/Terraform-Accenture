@@ -1,4 +1,4 @@
-##Launching your first AWS EC2 instance using Terraform 
+## Launching your first AWS EC2 instance using Terraform 
 ```
 cd ~
 mkdir EC2-lab && cd EC2-lab/
