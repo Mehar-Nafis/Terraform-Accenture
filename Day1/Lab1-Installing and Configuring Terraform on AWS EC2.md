@@ -5,8 +5,8 @@ To begin, log in to AWS Console.
 ### Task-1: Installing Terraform on Ubuntu 20.04 operating system
 
 * Manually Launch a `t2.micro` instance with OS version as `Ubuntu 22.04 LTS` in North Virginia (us-east-1) Region.
-* Use tag "`Name : TerraformServer`"
-* Create a new Keypair with the Name `Terraform-Keypair-YourName`
+* Use tag "`Name : Mehar-TerraformServer`"
+* Create a new Keypair with the Name `Mehar-Terraform-Keypair`
 * In security groups, include ports `22 (SSH)` and `80 (HTTP)`.
 * Configure Storage: 10 GiB
 * Launch the Instance.
