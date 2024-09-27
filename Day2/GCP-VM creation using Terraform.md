@@ -1,7 +1,6 @@
-### Launching your first VM using Terraform 
+## Launching your first GCP VM using Terraform 
 ```
-cd ~
-mkdir Lab2
+cd ~ && mkdir gcp-vm-lab && mkdir gcp-vm-lab
 ```
 ```
 vi provider.tf
@@ -43,32 +42,13 @@ Save the file using "ESCAPE + :wq!"
 terraform init
 ```
 ```
-terraform fmt
-```
-```
-terraform validate
-```
-```
 terraform plan
 ```
 ```
 terraform apply
 ```
-```
-#List the files
-ls 
-```
-To see what is saved in `terraform.tfstate` use the below command.
-
-```
-terraform show
-```
-Use the `terraform destroy` command for cleaning the infrastructure used in this lab
+Use the `terraform destroy` command to clean the infrastructure used in this lab
 ```
 terraform destroy
 ```
-Finally, verify that the resources are deleted in the Console.
-```
-cd ~
-rm -rf Lab2
-```
+
