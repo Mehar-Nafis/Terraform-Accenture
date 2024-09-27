@@ -1,6 +1,6 @@
 ## Creating an Azure Linux Machine using Terraform
 ```
-mkdir vm-lab && cd vm-lab
+cd ~ && mkdir azure-vm-lab && cd azure-vm-lab
 ```
 ```
 vi az-linux-vm.tf
@@ -90,4 +90,4 @@ Once Verified, Cleanup the resources using below command
 terraform destroy -auto-approve
 ```
 
-rm -rf vm-lab
+
