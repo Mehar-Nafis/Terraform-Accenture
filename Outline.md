@@ -1,36 +1,37 @@
 Day 1
 •	Infrastructure as Code   
-o	What is IAC? 
-o	Why do we need IAC? 
+  o	What is IAC? 
+  o	Why do we need IAC? 
 •	Terraform 
-o	Terraform HCL 
-o	Syntax 
+  o	Terraform HCL 
+  o	Syntax 
 o	Hands on: Creating an EC2 Instance in AWS and Installing Terraform   
 •	Terraform Providers 
-o	AWS 
-o	Azure 
-o	GCP 
+  o	AWS 
+  o	Azure 
+  o	GCP 
 
 Day 2
 •	Terraform files 
 o	File extension 
-o	Terraform Commands 
-o	Terraform init 
-o	Terraform plan 
-o	Terraform apply 
-o	Terraform destroy 
+  o	Terraform Commands 
+  o	Terraform init 
+  o	Terraform plan 
+  o	Terraform apply 
+  o	Terraform destroy 
 o	Hands on: Launching your VM using Terraform  on AWS, Azure and GCP
 
 •	Terraform Variable 
-o	Input variables 
-o	Terraform variable type 
-o	Outputting Variables 
-o	Terraform Local values 
+  o	Input variables 
+  o	Terraform variable type 
+  o	Outputting Variables 
+  o	Terraform Local values 
 o	Terraform functions 
 o	Data Sources  
 o	Hands on: AWS EC2 instance creation using Terraform Variables   
 o	Hands on: Using Output Feature   
 o	Hands on: Understanding local values, terraform functions, data sources 
+
 Day 3
 •	Software Provisioning using Terraform   
 o	File upload   
