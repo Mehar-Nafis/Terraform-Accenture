@@ -1,7 +1,7 @@
 ## Using Output Feature 
 
 ```
-mkdir output-variable-lab && cd output-variable-lab
+cd ~ && mkdir output-variable-lab && cd output-variable-lab
 ```
 Create the instance.tf file
 ```
