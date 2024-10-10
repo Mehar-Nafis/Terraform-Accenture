@@ -26,6 +26,7 @@ resource "aws_key_pair" "mykeypair" {
 resource "aws_instance" "my-machine" {
   ami                    = var.ami_id
   key_name               = var.key_name
+  vpc_security_group_ids = [var.sg_id]
   instance_type          = var.ins_type
   depends_on             = [aws_key_pair.mykeypair]
 
@@ -74,7 +75,7 @@ resource "aws_instance" "my-machine" {
 
   provisioner "local-exec" {
     command = <<-EOT
-      echo ${self.public_ip} >> /home/ubuntu/provisioning-lab/ip
+      echo ${self.public_ip} >> /home/ubuntu/provisioning-lab/public-ip
     EOT
   }
 }
@@ -84,12 +85,6 @@ Now, create the variables file with all variables to be used in the `main.tf` co
 vi variables.tf
 ```
 ```
-### **Note:** Change the following Inputs in `variables.tf.`
-
-### Edit the **Allocated Region** (**Ex:** ap-south-1) & **AMI ID** of same region,
-### Replace the same **Security Group ID** Created for the Jump Server
-### Add your Name for **KeyPair** ("**YourName**-CICDlab-KeyPair")
-
 variable "region" {
     default = "us-east-1"
 }
@@ -119,10 +114,6 @@ variable public_key {
     default = "/home/ubuntu/.ssh/id_rsa.pub"   #Ubuntu OS
 }
 
-variable "my-servers" {
-  type    = list(string)
-  default = ["Mehar-Jenkins-Server", "Mehar-Docker-Server"]
-}
 ```
 Now, execute the terraform commands to launch the new servers
 ```
@@ -134,15 +125,19 @@ terraform plan
 ```
 terraform apply -auto-approve
 ```
-Once the Changes are Applies, Go to `EC2 Dashboard` and check that `2 New Instances` are launched. Also check the `inventory file` and ensure the below output.
+Once the Changes are applied, Go to `EC2 Dashboard` and check that `New Instances` is launched. Also check the file `public-ip` and ensure the below output.
 ```
-cat /etc/ansible/hosts
+cat /home/ubuntu/provisioning-lab/public-ip
 ```
 From `Jump Server` SSH into `Jenkins-Server`, check they are accessible.
 
 ```
-ssh ubuntu@<Jenkins ip address>
+ssh ubuntu@<ec2 ip address>
 ```
 ```
 exit
 ````
+Now destroy the infra
+```
+terraform destroy auto-approve
+```
