@@ -1,3 +1,17 @@
+## Software Provisioning
+
+Create the terraform directory and set up the config files in it
+```
+cd ~ && mkdir provisioning-lab && cd provisioning-lab
+```
+As a first step, create a keyPair using `ssh-keygen` Command.
+```
+ssh-keygen -t rsa -b 2048 
+```
+```
+vi main.tf
+```
+Copy and paste the below code into `main.tf`
 ```
 provider "aws" {
   region = var.region
@@ -8,20 +22,15 @@ resource "aws_key_pair" "mykeypair" {
   public_key = file(var.public_key)
 }
 
-# to create 2 EC2 instances
+# to create  EC2 instances
 resource "aws_instance" "my-machine" {
-  # Launch 2 servers
-  for_each = toset(var.my-servers)
-
   ami                    = var.ami_id
   key_name               = var.key_name
-  vpc_security_group_ids = [var.sg_id]
   instance_type          = var.ins_type
   depends_on             = [aws_key_pair.mykeypair]
 
-  # Read from the list my-servers to name each server
   tags = {
-    Name = each.key
+    Name = Mehar-Provisioning-EC2
   }
 
   # Ensure the .ssh directory exists before copying the file
@@ -65,9 +74,75 @@ resource "aws_instance" "my-machine" {
 
   provisioner "local-exec" {
     command = <<-EOT
-      echo [${each.key}] >> /etc/ansible/hosts
-      echo ${self.public_ip} >> /etc/ansible/hosts
+      echo ${self.public_ip} >> /home/ubuntu/provisioning-lab/ip
     EOT
   }
 }
 ```
+Now, create the variables file with all variables to be used in the `main.tf` config file.
+```
+vi variables.tf
+```
+```
+### **Note:** Change the following Inputs in `variables.tf.`
+
+### Edit the **Allocated Region** (**Ex:** ap-south-1) & **AMI ID** of same region,
+### Replace the same **Security Group ID** Created for the Jump Server
+### Add your Name for **KeyPair** ("**YourName**-CICDlab-KeyPair")
+
+variable "region" {
+    default = "us-east-1"
+}
+
+# Change the SG ID. You can use the same SG ID used for your CICD Jump server
+# Basically the SG should open ports 22, 80, 8080, 9999, and 4243
+variable  "sg_id" {
+    default = "sg-02b8781c33d6f584d" # us-east-1
+}
+
+# Choose a free tier Ubuntu AMI. You can use below. 
+variable "ami_id" {
+    default = "ami-0e86e20dae9224db8" # us-east-1; Ubuntu
+}
+
+# We are only using t2.micro for this lab
+variable "ins_type" {
+    default = "t2.micro"
+}
+
+# Replace 'yourname' with your first name
+variable key_name {
+    default = "Mehar-Jenkins-Docker-KeyPair"
+}
+
+variable public_key {
+    default = "/home/ubuntu/.ssh/id_rsa.pub"   #Ubuntu OS
+}
+
+variable "my-servers" {
+  type    = list(string)
+  default = ["Mehar-Jenkins-Server", "Mehar-Docker-Server"]
+}
+```
+Now, execute the terraform commands to launch the new servers
+```
+terraform init
+```
+```
+terraform plan
+```
+```
+terraform apply -auto-approve
+```
+Once the Changes are Applies, Go to `EC2 Dashboard` and check that `2 New Instances` are launched. Also check the `inventory file` and ensure the below output.
+```
+cat /etc/ansible/hosts
+```
+From `Jump Server` SSH into `Jenkins-Server`, check they are accessible.
+
+```
+ssh ubuntu@<Jenkins ip address>
+```
+```
+exit
+````
