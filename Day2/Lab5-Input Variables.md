@@ -12,8 +12,6 @@ vi provider.tf
 Add the given lines, by pressing "INSERT" 
 ```
 provider "aws"{
-  access_key=var.AWS_ACCESS_KEY
-  secret_key=var.AWS_SECRET_KEY
   region=var.AWS_REGION
 }
 ```
@@ -23,11 +21,7 @@ vi vars.tf
 ```
 Add the given lines, by pressing "INSERT" also replace your `Region`
 ```
-variable "AWS_ACCESS_KEY"{}
-variable "AWS_SECRET_KEY"{}
-variable "AWS_REGION"{
-  default = "us-east-2"
-}
+variable "AWS_REGION"{}
 ```
 Save the file using "ESCAPE + :wq!"
 ```
@@ -35,8 +29,7 @@ vi terraform.tfvars
 ```
 Add the given lines, by pressing "INSERT" Also replace them with your `AccessKey` and `Secret Access Keys` that you created and downloaded earlier.
 ```
-AWS_ACCESS_KEY="< Insert your AWS Access Key >"
-AWS_SECRET_KEY="< Insert your AWS Secret Key >"
+AWS_REGION = "us-east-1"
 ```
 Save the file using "ESCAPE + :wq!"
 ```
@@ -48,7 +41,7 @@ resource "aws_instance" "terraform_example"{
   ami = "ami-07efac79022b86107"
   instance_type="t2.micro"
   tags = {
-    Name = "Variables-Lab2-YourName"
+    Name = "Mehar-Variables-EC2"
   }
 }
 ```
