@@ -1,7 +1,7 @@
 ## Understanding locals 
 
 ```
-mkdir locals-lab && cd locals-lab
+cd ~ && mkdir locals-lab && cd locals-lab
 ```
 ```
 vi local.tf
