@@ -39,9 +39,16 @@ terraform init
 terraform plan
 ```
 ```
-terraform apply
+terraform apply -auto-approve
 ```
+![image](https://github.com/user-attachments/assets/a5cd03cd-dd4c-4669-81c3-cc8cee692d4b)
+
 Clean up the resources.
 ```
-terraform destroy
+terraform destroy -auto-approve
+```
+![image](https://github.com/user-attachments/assets/c5fddff2-8bad-46aa-8e89-9fbe32692be8)
+
+```
+cd ~ && rm -rf data-lab
 ```
