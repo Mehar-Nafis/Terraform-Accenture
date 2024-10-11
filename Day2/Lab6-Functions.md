@@ -49,10 +49,18 @@ terraform init
 terraform plan
 ```
 ```
-terraform apply
+terraform apply -auto-approve
 ```
+![image](https://github.com/user-attachments/assets/132c0198-bb32-40ec-92b7-a7daef00aa94)
+
+
 Now clean up the resources.
 ```
-terraform destroy
+terraform destroy -auto-approve
+```
+![image](https://github.com/user-attachments/assets/e17b058d-5a2c-4615-9299-7ff707e6169c)
+
+```
+cd ~ && rm -rf functions-lab
 ```
 
