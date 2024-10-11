@@ -14,7 +14,7 @@ provider "aws" {
 
 locals {
   custom_tags = {
-    Name = "Mehar"
+    Name = "Mehar-local"
     Team = "DevOps"
     Company = "CloudThat"
   }
