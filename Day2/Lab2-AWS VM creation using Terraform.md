@@ -35,8 +35,8 @@ terraform apply -auto-approve
 ```
 ![image](https://github.com/user-attachments/assets/e51b404c-d33e-448b-89a5-5884827069b4)
 
-The same can be verified on the management console as well</br>
-</br>
+The same can be verified on the management console as well
+
 
 ![image](https://github.com/user-attachments/assets/d6c8c60e-4d19-45cf-bdb9-9b34f2c51e6e)
 
@@ -45,5 +45,6 @@ Clean up your resources
 ```
 terraform destroy -auto-approve
 ```
-![image](https://github.com/user-attachments/assets/752fb3fe-e412-47a2-afe4-a9d8b6fa60bb)
+![image](https://github.com/user-attachments/assets/8098c30e-20f7-478d-a9c5-deb2986daf44)
+
 
