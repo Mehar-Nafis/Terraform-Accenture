@@ -38,7 +38,7 @@ vi instance.tf
 Add the given lines, by pressing "INSERT" Also replace your `region's AMI ID` and `YourName`
 ```
 resource "aws_instance" "terraform_example"{
-  ami = "ami-07efac79022b86107"
+  ami = "ami-0866a3c8686eaeeba"
   instance_type="t2.micro"
   tags = {
     Name = "Mehar-Variables-EC2"
