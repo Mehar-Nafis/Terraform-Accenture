@@ -35,7 +35,7 @@ terraform apply -auto-approve
 ```
 ![image](https://github.com/user-attachments/assets/e51b404c-d33e-448b-89a5-5884827069b4)
 
-The same can be verified on the management console as well
+The same can be verified on the management console as well</br>
 
 
 ![image](https://github.com/user-attachments/assets/d6c8c60e-4d19-45cf-bdb9-9b34f2c51e6e)
