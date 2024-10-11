@@ -92,12 +92,12 @@ variable "region" {
 # Change the SG ID. You can use the same SG ID used for your CICD Jump server
 # Basically the SG should open ports 22, 80, 8080, 9999, and 4243
 variable  "sg_id" {
-    default = "sg-02b8781c33d6f584d" # us-east-1
+    default = "sgr-0e75d1ce8dc269c10" # us-east-1
 }
 
 # Choose a free tier Ubuntu AMI. You can use below. 
 variable "ami_id" {
-    default = "ami-0e86e20dae9224db8" # us-east-1; Ubuntu
+    default = "ami-0866a3c8686eaeeba" # us-east-1; Ubuntu
 }
 
 # We are only using t2.micro for this lab
@@ -107,7 +107,7 @@ variable "ins_type" {
 
 # Replace 'yourname' with your first name
 variable key_name {
-    default = "Mehar-Jenkins-Docker-KeyPair"
+    default = "Mehar-Provisioner-KeyPair"
 }
 
 variable public_key {
