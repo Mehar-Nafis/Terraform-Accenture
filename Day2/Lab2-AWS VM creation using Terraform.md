@@ -26,12 +26,6 @@ Save the file using "ESCAPE + :wq!"
 terraform init
 ```
 ```
-terraform fmt
-```
-```
-terraform validate
-```
-```
 terraform plan
 ```
 ```
