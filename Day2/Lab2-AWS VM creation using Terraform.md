@@ -2,10 +2,10 @@
 ```
 cd ~ && mkdir aws-vm-lab && cd aws-vm-lab
 ```
+Create the provider file
 ```
 vi provider.tf
 ```
-Add the given lines, by pressing "INSERT"
 ```
 provider "aws" {
   region  = "us-east-1"
