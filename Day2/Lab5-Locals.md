@@ -42,6 +42,16 @@ terraform plan
 ```
 terraform apply -auto-approve
 ```
+![image](https://github.com/user-attachments/assets/09e789e0-3fc5-4df5-a43d-808be1dd12c3)
+
+Cross verify from the Console.
+
+![image](https://github.com/user-attachments/assets/3800ec92-514b-46f5-937e-260713bb19dc)
+
+![image](https://github.com/user-attachments/assets/62e3e475-94db-4439-b4b2-4b7a6a5f2ce1)
+
+![image](https://github.com/user-attachments/assets/295ba029-bb51-421d-9993-f790a713dc8e)
+
 ```
-terraform destroy
+terraform destroy -auto-approve
 ```
