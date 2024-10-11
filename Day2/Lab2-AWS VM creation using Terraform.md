@@ -46,5 +46,8 @@ terraform destroy -auto-approve
 ```
 ![image](https://github.com/user-attachments/assets/5c45c2f9-3fc5-483a-8588-b97b07e7ac2b)
 
-
+Clean up your directory
+```
+cd ~ && rm -rf aws-vm-lab
+```
 
