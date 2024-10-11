@@ -14,6 +14,7 @@ provider "aws" {
 
 locals {
   custom_tags = {
+    Name = "Mehar"
     Team = "DevOps"
     Company = "CloudThat"
   }
@@ -39,7 +40,7 @@ terraform init
 terraform plan
 ```
 ```
-terraform apply
+terraform apply -auto-approve
 ```
 ```
 terraform destroy
