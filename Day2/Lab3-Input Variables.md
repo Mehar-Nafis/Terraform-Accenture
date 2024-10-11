@@ -6,6 +6,7 @@
 cd ~ && mkdir input-variables-lab && cd input-variables-lab/
 ```
 Now Create four Files ie. `provider.tf,` `vars.tf,` `terraform.tfvars,` `instance.tf.`
+
 ![image](https://github.com/user-attachments/assets/ee42d95e-0835-43e1-a1c1-cf6b3836d528)
 
 ```
