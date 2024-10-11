@@ -52,6 +52,13 @@ Cross verify from the Console.
 
 ![image](https://github.com/user-attachments/assets/295ba029-bb51-421d-9993-f790a713dc8e)
 
+
+Clean up the resources
 ```
 terraform destroy -auto-approve
+```
+![image](https://github.com/user-attachments/assets/f2067e98-1665-420a-a759-043f048f8b5c)
+
+```
+cd ~ && rm -rf locals-lab
 ```
