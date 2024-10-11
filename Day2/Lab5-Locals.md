@@ -19,7 +19,7 @@ locals {
   }
 }
 resource "aws_instance" "instance1" {
-   ami = "******ENTER THE AMI VALUE********"
+   ami = "ami-0866a3c8686eaeeba"
    instance_type = "t2.micro"
    tags = local.custom_tags
 }
