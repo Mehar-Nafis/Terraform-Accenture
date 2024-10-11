@@ -3,7 +3,7 @@
 cd ~ && mkdir aws-vm-lab && cd aws-vm-lab
 ```
 ```
-vi example.tf
+vi main.tf
 ```
 Add the given lines, by pressing "INSERT"
 
