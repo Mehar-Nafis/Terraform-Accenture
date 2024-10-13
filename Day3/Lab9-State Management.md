@@ -76,6 +76,9 @@ terraform plan
 ```
 terraform apply -auto-approve
 ```
+
+![image](https://github.com/user-attachments/assets/ec7b6bb8-14e3-4f6f-ae8c-e022da9e102e)
+
 * Go to the S3 bucket and click on `terraform` > `remotestate` > In Properties Copy the `Object URL` and paste it in Browser.
   (By default it shows Access Denied)
 * To view the content of the file, in S3 Bucket tab, Click on `permission` and click on `Edit` under `Access control list (ACL)` > `Everyone (public access)` > Check `"Read"` then check `I understand the effects of these changes on this object` and then Click on `Save changes`
@@ -83,7 +86,7 @@ terraform apply -auto-approve
 * Now, You should be able to access the state file and View the resources.
   (It shows the attributes of a single resource in the Terraform state of `aws_instance.terraform-remoteState`.)
 
-Check out the State commands Lab before destroying your resources.
+Check out the State Commands Lab before destroying your resources.
 
 Use the `terraform destroy` command to clean the infrastructure used in this lab, 
 ```
@@ -93,4 +96,4 @@ Once done, Remove the directory.
 ```
 cd ~ && rm -rf S3-Lab
 ```
-**Note:** Also Ensure to delete the `S3 Bucket` (To delete, first empty the Bucket and then Delete it.)
+**Note: Also Ensure to delete the `S3 Bucket` and the  Dynamo DB Table(To delete, first empty the Bucket and then Delete it.) **
