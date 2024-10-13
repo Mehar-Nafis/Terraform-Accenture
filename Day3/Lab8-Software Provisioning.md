@@ -125,7 +125,7 @@ terraform plan
 ```
 terraform apply -auto-approve
 ```
-Once the Changes are applied, Go to `EC2 Dashboard` and check that `New Instances` is launched. Also check the file `public-ip` and ensure the below output.
+Once the Changes are applied, Go to `EC2 Dashboard` and check that `New Instances` is launched. Also check the file `public-ip` to ensure the output.
 ```
 cat /home/ubuntu/provisioning-lab/public-ip
 ```
