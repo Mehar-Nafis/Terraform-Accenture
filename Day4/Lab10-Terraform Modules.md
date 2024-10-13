@@ -34,12 +34,6 @@ ssh-keygen -f mykey
 terraform init
 ```
 ```
-terraform fmt
-```
-```
-terraform validate
-```
-```
 terraform plan
 ```
 ```
@@ -50,12 +44,11 @@ terraform apply -auto-approve
 
 Once the resources are created. Then, verify all the resources and then destroy them.
 ```
-terraform destroy
+terraform destroy -auto-approve
 ```
 Once Destroyed, remove the Directory and Zip FIle.
 ```
-cd ~
-rm -rf terraform-modules
+cd ~ && rm -rf terraform-modules
 ```
 ```
 rm -rf terraform-modules.tar.gz
