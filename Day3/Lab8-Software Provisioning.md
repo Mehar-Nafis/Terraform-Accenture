@@ -141,3 +141,6 @@ Now destroy the infra
 ```
 terraform destroy auto-approve
 ```
+```
+cd ~ && rm -rf provisioning-lab
+```
