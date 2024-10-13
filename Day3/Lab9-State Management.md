@@ -14,14 +14,7 @@ aws s3 ls
 ```
 ### Task-2: Configure Remote State
 ```
-cd ~
-mkdir S3-Lab && cd S3-Lab
-```
-```
-mkdir remote-state-lab && cd remote-state-lab
-```
-```
-ls
+cd ~ && mkdir S3-Lab && cd S3-Lab
 ```
 Create a New Configuration File 
 ```
