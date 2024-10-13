@@ -13,7 +13,18 @@
 ```
 aws s3 ls 
 ```
-### Task-2: Configure Remote State
+
+### Task-2: Manually Create a Dynamo DB table 
+
+* Open the DynamoDB Service
+* Click on the `Create table` button.
+* Configure the Table Details
+  - `Table name`: Enter a name for your table, such as terraform-state-lock.
+  - `Partition key`: Enter `LockID` as the partition key name and set the data type to `String (S)`.
+  - Choose the default settings
+* Click `Create table`
+
+### Task-3: Configure Remote State
 ```
 cd ~ && mkdir S3-Lab && cd S3-Lab
 ```
@@ -51,6 +62,7 @@ terraform {
     region = "<Replace your s3 bucket region>"
     bucket = "<Replace your s3 bucket name>"
     key    = "terraform/remotestate"
+    dynamodb_table = "<replace your table name>"
   }
 }
 ```
