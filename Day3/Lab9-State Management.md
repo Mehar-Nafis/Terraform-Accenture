@@ -18,10 +18,14 @@ cd ~ && mkdir S3-Lab && cd S3-Lab
 ```
 Create a New Configuration File 
 ```
-vi instance.tf
+vi main.tf
 ```
 Add the below given lines, by pressing "INSERT"  
 ```
+provider "aws" {
+  region = var.AWS_REGION
+}
+
 resource "aws_instance" "terraform-remoteState" {
   ami           = var.AMIS[var.AWS_REGION]
   instance_type = "t2.nano"
@@ -50,15 +54,6 @@ variable "AMIS" {
   }
 }
 ```
-Once done, save the file and follow further steps.
-```
-vi provider.tf
-```
-```
-provider "aws" {
-  region = var.AWS_REGION
-}
-```
 Now, Create a New Configuration File for storing "`terraform.tfstate`" file in the backend. (ie. `Amazon S3.`)
 
 ```
@@ -85,7 +80,7 @@ terraform init
 terraform plan
 ```
 ```
-terraform apply
+terraform apply -auto-approve
 ```
 * Go to the S3 bucket and click on `terraform` > `remotestate` > In Properties Copy the `Object URL` and paste it in Browser.
   (By default it shows Access Denied)
@@ -96,11 +91,10 @@ terraform apply
 
 Use the `terraform destroy` command to clean the infrastructure used in this lab, 
 ```
-terraform destroy
+terraform destroy -auto-approve
 ```
 Once done, Remove the directory and Zip file using "`rm -rf`"
 ```
-cd ~
-rm -rf S3-Lab
+cd ~ && rm -rf S3-Lab
 ```
 **Note:** Also Ensure to delete the `S3 Bucket` (To delete, first empty the Bucket and then Delete it.)
