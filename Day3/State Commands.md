@@ -5,6 +5,8 @@ This command lists all resources that are being tracked in the Terraform state. 
 ```
 terraform state list
 ```
+![image](https://github.com/user-attachments/assets/7c110386-3454-48ed-9015-ffc3c255e730)
+
 
 ### terraform state show
 Displays detailed information about a specific resource in the Terraform state, including its attributes and metadata.
