@@ -113,4 +113,5 @@ chmod 400 capstone-key
 terraform destroy -auto-approve
 ```
 ```
-cd .. && rm -rf depends_on_lab
+cd ~ && rm -rf depends_on_lab
+```
