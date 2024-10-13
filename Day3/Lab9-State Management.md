@@ -23,11 +23,11 @@ vi main.tf
 Add the below given lines, by pressing "INSERT"  
 ```
 provider "aws" {
-  region = var.AWS_REGION
+  region = us-east-1
 }
 
 resource "aws_instance" "terraform-remoteState" {
-  ami           = var.AMIS[var.AWS_REGION]
+  ami           = "ami-0866a3c8686eaeeba"
   instance_type = "t2.nano"
  }
 
@@ -36,23 +36,6 @@ output "ip" {
 }
 ```
 Save the file using "ESCAPE + :wq!"
-```
-vi vars.tf
-```
-In `vars.tf` file ensure to replace your `region` and Include your `region's Ubuntu AMI ID` to the list.
-```
-variable "AWS_REGION" {
-  default = "us-east-2"
-}
-
-variable "AMIS" {
-  type = map(string)
-  default = {
-    us-east-2 = "ami-0e83be366243f524a"
-    us-west-2 = "ami-02e7fad8336aa2c57"
-    eu-west-1 = "ami-029f9476"
-  }
-}
 ```
 Now, Create a New Configuration File for storing "`terraform.tfstate`" file in the backend. (ie. `Amazon S3.`)
 
