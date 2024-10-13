@@ -29,6 +29,8 @@ provider "aws" {
 resource "aws_instance" "terraform-remoteState" {
   ami           = "ami-0866a3c8686eaeeba"
   instance_type = "t2.nano"
+  tags = {
+    Name = "Mehar-remote-ec2"}
  }
 
 output "ip" {
