@@ -83,11 +83,13 @@ terraform apply -auto-approve
 * Now, You should be able to access the state file and View the resources.
   (It shows the attributes of a single resource in the Terraform state of `aws_instance.terraform-remoteState`.)
 
+Check out the State commands Lab before destroying your resources.
+
 Use the `terraform destroy` command to clean the infrastructure used in this lab, 
 ```
 terraform destroy -auto-approve
 ```
-Once done, Remove the directory and Zip file using "`rm -rf`"
+Once done, Remove the directory.
 ```
 cd ~ && rm -rf S3-Lab
 ```
