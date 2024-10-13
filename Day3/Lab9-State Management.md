@@ -39,9 +39,8 @@ output "ip" {
 }
 ```
 Save the file using "ESCAPE + :wq!"
-```
-Now, Create a New Configuration File for storing "`terraform.tfstate`" file in the backend. (ie. `Amazon S3.`)
 
+Now, Create a New Configuration File for storing "`terraform.tfstate`" file in the backend. (ie. `Amazon S3.`)
 ```
 vi backend.tf
 ```
