@@ -96,4 +96,4 @@ Once done, Remove the directory.
 ```
 cd ~ && rm -rf S3-Lab
 ```
-**Note:** `Also Ensure to delete the `S3 Bucket` and the  Dynamo DB Table(To delete, first empty the Bucket and then Delete it.) `
+**Note:** `Also Ensure to delete the S3 Bucket and the  Dynamo DB Table(To delete, first empty the Bucket and then Delete it.) `
