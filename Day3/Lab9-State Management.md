@@ -71,9 +71,6 @@ terraform {
 ```
 Save the file using "ESCAPE + :wq!"
 ```
-cat backend.tf
-```
-```
 terraform init
 ```
 ```
