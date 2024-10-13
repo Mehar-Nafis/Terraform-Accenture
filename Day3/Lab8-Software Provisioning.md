@@ -31,7 +31,7 @@ resource "aws_instance" "my-machine" {
   depends_on             = [aws_key_pair.mykeypair]
 
   tags = {
-    Name = Mehar-Provisioning-EC2
+    Name = "Mehar-Provisioning-EC2"
   }
 
   # Ensure the .ssh directory exists before copying the file
