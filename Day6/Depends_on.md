@@ -1,6 +1,6 @@
 ## Creating Key Pair and passing the key when Creating an EC2 Instance
 ```
-mkdir depends_on_lab && cd depends_on_lab
+cd ~ && mkdir depends_on_lab && cd depends_on_lab
 ```
 
 
