@@ -2,10 +2,7 @@
 
 ### Create the Configuration File
 ```
-cd ~
-```
-```
-mkdir workspace-lab && cd workspace-lab
+cd ~ && mkdir workspace-lab && cd workspace-lab
 ```
 Now Create File configuration file instance.tf.
 ```
