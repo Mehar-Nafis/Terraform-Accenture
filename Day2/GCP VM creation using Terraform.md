@@ -9,7 +9,7 @@ Add the given lines, by pressing "INSERT"
 
 ```hcl
 provider "google" {
-  project     = "deloitte-team2"
+  project     = "deloitte-team3"
   zone   = "us-central1-c"
   region      = "us-central1"
 }
