@@ -18,7 +18,7 @@ variable "region" {
 
 variable "tags" {
   type = list
-  default = ["ec2-1","ec2-2"]
+  default = ["Mehar-ec2-1","Mehar-ec2-2"]
 }
 
 variable "ami" {
