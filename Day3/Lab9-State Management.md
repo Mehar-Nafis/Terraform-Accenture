@@ -35,7 +35,7 @@ vi main.tf
 Add the below given lines, by pressing "INSERT"  
 ```
 provider "aws" {
-  region = us-east-1
+  region = "us-east-1"
 }
 
 resource "aws_instance" "terraform-remoteState" {
