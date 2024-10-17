@@ -7,3 +7,15 @@ unzip Terraform-Two-Tier-Architecture.zip
 ```
 cd Terraform-Two-Tier-Architecture-main
 ```
+```
+terraform init
+```
+```
+terraform plan
+```
+```
+terraform apply -auto-approve
+```
+```
+terraform destroy -auto-approve
+```
