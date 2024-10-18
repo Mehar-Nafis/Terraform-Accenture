@@ -2,10 +2,11 @@
 
 The given Terraform configuration sets up a two-tier architecture on AWS with the following key components:
 
-1. Backend Configuration (backend.tf):
-   * Uses an S3 bucket to store Terraform state files, with a DynamoDB table to lock the state files, preventing concurrent updates.
-3. Database Setup (db.tf):
-Creates an RDS instance running MySQL, with configuration settings like storage, engine version, and instance class.
+1. Backend Configuration (`backend.tf`):
+* Uses an S3 bucket to store Terraform state files, with a DynamoDB table to lock the state files, preventing concurrent updates.
+     
+2. Database Setup (`db.tf`):
+* Creates an RDS instance running MySQL, with configuration settings like storage, engine version, and instance class.
 A Database Subnet Group is set up to host the RDS instance in private subnets.
 4. Web Server Instances (ec2.tf):
 Deploys two EC2 instances (web1 and web2) in different availability zones.
