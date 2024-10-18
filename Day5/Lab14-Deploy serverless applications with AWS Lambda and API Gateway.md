@@ -2,28 +2,28 @@
 Setting up infrastructure with Terraform, packaging and deploying a Lambda function, integrating it with API Gateway, and testing the entire flow.
 
 1. Create an S3 Bucket for the Lambda Function:
-  * Use Terraform to create an S3 bucket where the Lambda function package will be stored.
-  * Apply the configuration to create the S3 bucket using terraform apply.
+   * Use Terraform to create an S3 bucket where the Lambda function package will be stored.
+   * Apply the configuration to create the S3 bucket using terraform apply.
     
 2. Package and Upload Lambda Function Code:
-  * Package the Lambda function code and dependencies (in this case, a Node.js function) into a ZIP file using the archive_file data source.
-  * Upload the ZIP file to the S3 bucket using an aws_s3_object resource.
+   * Package the Lambda function code and dependencies (in this case, a Node.js function) into a ZIP file using the archive_file data source.
+   * Upload the ZIP file to the S3 bucket using an aws_s3_object resource.
     
 3. Create the Lambda Function:
-  * Define the Lambda function using the aws_lambda_function resource.
-  * Specify the S3 bucket and key for the code package, runtime, handler, and IAM role for the function execution.
-  * Create a CloudWatch Log Group for storing logs from the Lambda function.
-  * Define an IAM role for the Lambda function, including necessary policies for CloudWatch access.
-  * Apply the configuration to deploy the Lambda function and associated resources.
-  * Invoke the Lambda function using the AWS CLI to confirm it is working as expected.
+   * Define the Lambda function using the aws_lambda_function resource.
+   * Specify the S3 bucket and key for the code package, runtime, handler, and IAM role for the function execution.
+   * Create a CloudWatch Log Group for storing logs from the Lambda function.
+   * Define an IAM role for the Lambda function, including necessary policies for CloudWatch access.
+   * Apply the configuration to deploy the Lambda function and associated resources.
+   * Invoke the Lambda function using the AWS CLI to confirm it is working as expected.
     
 4. Set Up API Gateway:
-  * Create an API Gateway with an HTTP protocol using the aws_apigatewayv2_api resource.
-  * Configure a deployment stage and enable access logging.
-  * Set up an API integration with the Lambda function using aws_apigatewayv2_integration.
-  * Create a route in API Gateway that maps to a specific path (/hello) and integrates with the Lambda function.  
-  * Grant API Gateway permission to invoke the Lambda function using aws_lambda_permission.
-  * Send a request to the API endpoint, which will trigger the Lambda function and return a response.
+   * Create an API Gateway with an HTTP protocol using the aws_apigatewayv2_api resource.
+   * Configure a deployment stage and enable access logging.
+   * Set up an API integration with the Lambda function using aws_apigatewayv2_integration.
+   * Create a route in API Gateway that maps to a specific path (/hello) and integrates with the Lambda function.  
+   * Grant API Gateway permission to invoke the Lambda function using aws_lambda_permission.
+   * Send a request to the API endpoint, which will trigger the Lambda function and return a response.
 
 
 ### Task 1: Create infrastructure
