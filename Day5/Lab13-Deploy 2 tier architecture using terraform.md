@@ -1,6 +1,6 @@
 ## Deploy 2 tier architecture using terraform
 
-The given Terraform configuration sets up a two-tier architecture on AWS with the following key components:
+The given Terraform configuration sets up a two-tier architecture on AWS with the following key components: This Terraform configuration automates the deployment of a scalable, two-tier architecture consisting of a web tier with load-balanced EC2 instances and a database tier using Amazon RDS, all within a secured and network-configured environment.
 
 1. Backend Configuration (`backend.tf`):
      * Uses an S3 bucket to store Terraform state files, with a DynamoDB table to lock the state files, preventing concurrent updates.
@@ -26,11 +26,13 @@ The given Terraform configuration sets up a two-tier architecture on AWS with th
 7. Load Balancer Configuration (`sg-alb.tf`):
     * Configures an Application Load Balancer (ALB) with associated security groups.
     * Creates a Target Group and Listener to route HTTP traffic to the web instances (web1 and web2).
+      
 8. Security Groups:
-Configures security groups to control access to web servers and the RDS database. Security rules include:
-Allowing HTTP, HTTPS, and SSH traffic for public instances.
-Limiting database access to internal IP ranges.
-This Terraform configuration automates the deployment of a scalable, two-tier architecture consisting of a web tier with load-balanced EC2 instances and a database tier using Amazon RDS, all within a secured and network-configured environment.
+    * Configures security groups to control access to web servers and the RDS database. Security rules include:
+    * Allowing HTTP, HTTPS, and SSH traffic for public instances.
+    * Limiting database access to internal IP ranges.
+
+
 Create the infra
 ```
 cd ~ && wget https://github.com/Mehar-Nafis/Terraform-Two-Tier-Architecture/archive/refs/heads/main.zip -O Terraform-Two-Tier-Architecture.zip
